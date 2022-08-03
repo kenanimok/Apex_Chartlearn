@@ -31,7 +31,7 @@ function PiechartHook()
                 <Chart 
                 type="donut"
                 width={300}
-                height={400}
+                height={600}
 
                 series={ [33,55,77,99] }                
                 options={{
@@ -39,7 +39,15 @@ function PiechartHook()
                         // } , 
                        noData:{text:"Empty Data"},                        
                       // colors:["#f90000","#f0f"],
-                      labels:['usa','usb','china','thia']                     
+                      labels:['usa','usb','china','thia']  ,                   
+                      colors: ['#000000', '#767676', '#D5D5D5', '#BFBFBF'],
+                      dataLabels: {
+                        enabled: false
+                      },
+                      stroke: {
+                        show: true,
+                        width: 0,
+                    }
 
                  }}
                 >

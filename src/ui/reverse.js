@@ -29,6 +29,7 @@ function getItem(label, key, icon, children) {
 const items = [];
 
 const ChartUi = () => {
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout
       style={{
@@ -36,7 +37,9 @@ const ChartUi = () => {
       }}
     >
       <Sider
-      
+        collapsible
+        collapsed={collapsed}
+        onCollapse={(value) => setCollapsed(value)}
       >
         <div className="logo" />
         <Menu
@@ -67,23 +70,27 @@ const ChartUi = () => {
           </ContainerHead>
 
 
-           <ContainerBody>
-              <ItemBody className="item1"> <PiechartHook></PiechartHook>  </ItemBody>
-             
-              <ItemBody> 
-                <ConTitleBody>อำเภอมืองภูเก็ต    อำเภอมืองภูเก็ต </ConTitleBody>
-                     <PiechartHook></PiechartHook>
-              </ItemBody>
-              <ItemBody> 
-                <ConTitleBody>อำเภอมืองภูเก็ต    อำเภอมืองภูเก็ต </ConTitleBody>
-                     <PiechartHook></PiechartHook>
-              </ItemBody>
-              <ItemBody> 
-                <ConTitleBody>อำเภอมืองภูเก็ต    อำเภอมืองภูเก็ต </ConTitleBody>
-                     <PiechartHook></PiechartHook>
-              </ItemBody>         
-            </ContainerBody> 
-   
+           {/* <ContainerBody>
+              <ItemBody className="item1">dddddd</ItemBody>
+              <ItemBody>dddddd</ItemBody>
+              <ItemBody>dddddd</ItemBody>
+              <ItemBody>dddddd</ItemBody>
+            </ContainerBody> */}
+            <Row>
+            <Colum span={12} style={{border:"2px"}}> <PiechartHook></PiechartHook>   </Colum>
+            <Colum span={12} >
+              {/* <Colum> <Row><CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard></Row> </Colum>
+              <Colum> <Row><CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard></Row> </Colum>
+              <Colum> <Row><CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard></Row> </Colum> */}
+                <Row> <CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard> </Row>
+                <Row> <CsCard><PiechartHook></PiechartHook></CsCard></Row>
+                <Row> <CsCard><PiechartHook></PiechartHook></CsCard></Row>
+
+            </Colum>
+            
+
+
+            </Row>
          
 
 
@@ -107,8 +114,7 @@ const CardHead = styled.div`
   margin-left: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
-  /* border-right: solid black; */
-
+  border-right: solid black;
 `;
 
 const Titilecard = styled.p`
@@ -164,7 +170,7 @@ const ContainerBody = styled.div`
  display: grid;
   grid-template-columns: auto auto ;
   grid-gap: 10px;
-  background-color: #f8f8f8;
+  background-color: #2196F3;
   padding: 10px;
  height: 100vh;
   .item1 {
@@ -174,28 +180,20 @@ const ContainerBody = styled.div`
 
 const ItemBody = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
-  
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+
 `
 
+const Colum = styled(Col)`
+background-color: white;
+/* width: 100%;
+height: 1076px; */
+`
 
-const ConTitleBody = styled.div`
-font-family: 'Kanit';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-background-color: #F9F9F9;
-margin: 10px;
-width: 725px;
-height: 50px;
-display: flex;
+const CsCard = styled(Card)`
+display:  flex;
 flex-direction: row;
-  justify-content: space-between;
-
+justify-content: start;
 `
-
-
-
- 
-
-
-
