@@ -2,29 +2,6 @@ import React ,{ useState, useEffect} from "react";
 import  Chart  from "react-apexcharts";
 function PiechartHook()
 {
-   const [stdudentSubject, setStudentsubject]= useState([]);
-   const [studentMarks, setStudentMarks]= useState([]);
-
-//    useEffect( ()=>{
-//        const sSubject=[];
-//        const sMarks=[];
-//        const getStudentdata= async()=>{
-//        const reqData= await fetch("http://localhost/reactgraphtutorial/marks");
-//        const resData= await reqData.json();       
-//        for(let i=0; i< resData.length; i++)
-//        {
-//         sSubject.push(resData[i].subject);
-//         sMarks.push(parseInt(resData[i].marks));
-//        }
-//        setStudentsubject(sSubject);
-//        setStudentMarks(sMarks);
-//         //console.log(resData); 
-//        }
-
-//     getStudentdata();
-
-//    },[]);
-
     return(
         <React.Fragment>
             <div className="container-fluid mb-3">
@@ -33,14 +10,14 @@ function PiechartHook()
                 width={300}
                 height={600}
 
-                series={ [33,55,77,99] }                
+                series={ [33,55,77,99,33,44] }                
                 options={{
                         // title:{ text:"Student PieChart"
                         // } , 
                        noData:{text:"Empty Data"},                        
                       // colors:["#f90000","#f0f"],
-                      labels:['usa','usb','china','thia','xxx','dsfd']  ,                   
-                      colors: ['#000000', '#767676', '#D5D5D5', '#BFBFBF'],
+                      labels:['เยอรมัน','รัสเซีย','อินเดีย','มาเลเซีย','ออสเตเรีย','อื่นๆ']  ,                   
+                      colors: ['#000000', '#767676', '#D5D5D5', '#BFBFBF','#9C9C9C','#3A3A3A'],
                       dataLabels: {
                         enabled: false
                       },
@@ -51,9 +28,20 @@ function PiechartHook()
                     legend:{
                         position: 'bottom',
                         itemMargin: {
-                            horizontal: 10,
-                            vertical: 10
+                            horizontal: 11,
+                            vertical: 0
                         },
+                    },
+
+                    tooltip: {
+                        enabled: true,
+                        custom: function({series, seriesIndex, dataPointIndex, w}) {
+                          let allcun = series.reduce((val1,val2)=>val1+val2)
+                           const country = w.config.labels[seriesIndex];
+                           const result =    series[seriesIndex];
+                          const caculate = (result/allcun)*100
+                        return `<div><span> ${country} ${result} คน   (${caculate.toFixed(0)}%) </span></div>`
+                      }
                     },
                   
                  }}
