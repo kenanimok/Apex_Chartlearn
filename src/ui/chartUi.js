@@ -13,7 +13,8 @@ import { Col, Row } from "antd";
 import styled from "styled-components";
 import { Card } from "antd";
 import PiechartHook from "../PieHook";
-import SampleLine from "./Simpleline";
+import SampleLine from "./Columnchart";
+import AreaChart from "./areaChart";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -66,7 +67,7 @@ const ChartUi = () => {
 
 
            <ContainerBody>
-              <ItemBody className="item1"> <PiechartHook></PiechartHook>  </ItemBody>
+              <ItemBody className="item1"> <AreaChart/>  </ItemBody>
              
               <ItemBody> 
                 <ConTitleBody> <span>อำเภอมืองภูเก็ต</span>  <span>54,000 คน</span> </ConTitleBody>
@@ -169,7 +170,8 @@ const ContainerBody = styled.div`
   grid-gap: 10px;
   background-color: #f8f8f8;
   padding: 10px;
- height: 100vh;
+ /* height: 100vh; */
+
   .item1 {
   grid-row: 1 / span 3;
 }

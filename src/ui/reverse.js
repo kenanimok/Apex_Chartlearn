@@ -13,7 +13,7 @@ import { Col, Row } from "antd";
 import styled from "styled-components";
 import { Card } from "antd";
 import PiechartHook from "../PieHook";
-import SampleLine from "./Simpleline";
+import SampleLine from "./Columnchart";
 
 const { Header, Content, Footer, Sider } = Layout;
 

@@ -1,10 +1,10 @@
 import React ,{ useState, useEffect} from "react";
 import  Chart  from "react-apexcharts";
-export default function SampleLine() {
+export default function AreaChart() {
     const series = [
       {
         name: "Temperature in Fahrenheit", //will be displayed on the y-axis
-        data: [21203, 11203, 7211, 5111,4000,3993,3873,2203,2101,2021]
+        data: [2, 11203, 3, 5111,1,3993,22,2203,44,2021]
       }
     ];
     const options = {
@@ -14,11 +14,9 @@ export default function SampleLine() {
            show:false
           },
       },
-
       dataLabels: {
         enabled: false,
       },
-     
       colors:['#4C4C4C'],
 
       xaxis: {
@@ -27,7 +25,7 @@ export default function SampleLine() {
     };
     return (
       <div>
-        <Chart options={options} type="bar" series={series} height="90%" width="95%" />
+        <Chart options={options} type="area" series={series} height="100%" width="95%" />
       </div>
     );
   }

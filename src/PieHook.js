@@ -36,13 +36,20 @@ function PiechartHook()
                     tooltip: {
                         enabled: true,
                         custom: function({series, seriesIndex, dataPointIndex, w}) {
+                            //    console.log('series', series)
+                            //    console.log('seriesIndex', first)
                           let allcun = series.reduce((val1,val2)=>val1+val2)
                            const country = w.config.labels[seriesIndex];
+                           
                            const result =    series[seriesIndex];
                           const caculate = (result/allcun)*100
                         return `<div><span> ${country} ${result} คน   (${caculate.toFixed(0)}%) </span></div>`
                       }
                     },
+                    // total:{
+                    //     show:true,
+                    //     labels:"total"
+                    // }
                   
                  }}
                  legend={{   
