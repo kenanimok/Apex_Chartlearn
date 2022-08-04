@@ -39,7 +39,7 @@ function PiechartHook()
                         // } , 
                        noData:{text:"Empty Data"},                        
                       // colors:["#f90000","#f0f"],
-                      labels:['usa','usb','china','thia']  ,                   
+                      labels:['usa','usb','china','thia','xxx','dsfd']  ,                   
                       colors: ['#000000', '#767676', '#D5D5D5', '#BFBFBF'],
                       dataLabels: {
                         enabled: false
@@ -47,9 +47,22 @@ function PiechartHook()
                       stroke: {
                         show: true,
                         width: 0,
-                    }
-
+                    },
+                    legend:{
+                        position: 'bottom',
+                        itemMargin: {
+                            horizontal: 10,
+                            vertical: 10
+                        },
+                    },
+                  
                  }}
+                 legend={{   
+                show:false,
+                horizontalAlign: 'bottom', 
+                 position: 'bottom'
+
+                }}
                 >
                 </Chart>
             </div>

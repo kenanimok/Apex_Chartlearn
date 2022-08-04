@@ -35,9 +35,7 @@ const ChartUi = () => {
         minHeight: "100vh",
       }}
     >
-      <Sider
-      
-      >
+      <Sider >
         <div className="logo" />
         <Menu
           theme="dark"
@@ -71,8 +69,13 @@ const ChartUi = () => {
               <ItemBody className="item1"> <PiechartHook></PiechartHook>  </ItemBody>
              
               <ItemBody> 
-                <ConTitleBody>อำเภอมืองภูเก็ต    อำเภอมืองภูเก็ต </ConTitleBody>
-                     <PiechartHook></PiechartHook>
+                <ConTitleBody> <span>อำเภอมืองภูเก็ต</span>  <span>54,000 คน</span> </ConTitleBody>
+                    <Bodycard>
+                    <PiechartHook></PiechartHook>
+                    <PiechartHook></PiechartHook>
+
+                    </Bodycard>
+                     
               </ItemBody>
               <ItemBody> 
                 <ConTitleBody>อำเภอมืองภูเก็ต    อำเภอมืองภูเก็ต </ConTitleBody>
@@ -179,19 +182,26 @@ const ItemBody = styled.div`
 
 
 const ConTitleBody = styled.div`
-font-family: 'Kanit';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
 background-color: #F9F9F9;
 margin: 10px;
 width: 725px;
 height: 50px;
 display: flex;
-flex-direction: row;
-  justify-content: space-between;
-
+justify-content: space-between;
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+align-items: center;
 `
+const Bodycard = styled.div`
+display: flex;
+flex-direction: row;
+`
+
+
+
+
 
 
 
