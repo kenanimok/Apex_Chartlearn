@@ -1,11 +1,12 @@
 import React ,{ useState, useEffect} from "react";
+import styled from "styled-components";
 import  Chart  from "react-apexcharts";
 function PiechartHook()
 {
     return(
         <React.Fragment>
             <div className="container-fluid mb-3">
-                <Chart 
+                <Charts 
                 type="donut"
                 width={300}
                 height={600}
@@ -14,6 +15,29 @@ function PiechartHook()
                 options={{
                         // title:{ text:"Student PieChart"
                         // } , 
+                        plotOptions: {
+                          pie:{
+                              donut: {
+                                size: '80%',
+                                // endigShape: "rounded",
+                                // borderRadius: 10,
+                              }
+                            }
+                            },
+                          
+
+                          stroke: {
+                            show: true,
+                            width: 0,
+                            curve: 'smooth',
+                            lineCap: 'round',
+
+                          },
+
+                        // pattern: {
+                        //     style: 'circles',
+                        // },
+
                        noData:{text:"Empty Data"},                        
                       // colors:["#f90000","#f0f"],
                       labels:['เยอรมัน','รัสเซีย','อินเดีย','มาเลเซีย','ออสเตเรีย','อื่นๆ']  ,                   
@@ -21,12 +45,22 @@ function PiechartHook()
                       dataLabels: {
                         enabled: false
                       },
-                      stroke: {
-                        show: true,
-                        width: 0,
-                    },
+                    //   stroke: {
+                    //     show: true,
+                    //     width: 0,
+                    //     curve:'smooth',
+                    //     lineCap: 'butt',
+
+                    // },
+
+                   fill:{
+                    stroke: {
+                        show:true,
+                        lineCap: 'smooth'
+                      },
+                   },
                     legend:{
-                        position: 'bottom',
+                        position: 'right',
                         itemMargin: {
                             horizontal: 11,
                             vertical: 0
@@ -59,9 +93,15 @@ function PiechartHook()
 
                 }}
                 >
-                </Chart>
+                </Charts>
             </div>
         </React.Fragment>
     );
 }
 export default PiechartHook;
+
+const Charts = styled(Chart)`
+.apexcharts-series.apexcharts-pie-series{
+   border-radius: 10px;
+}
+`

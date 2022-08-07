@@ -3,6 +3,7 @@ import PiechartHook from '../PieHook'
 import { Card } from "antd";
 import Columnchart from '../ui/Columnchart';
 import AreaChart from '../ui/areaChart';
+import Barchart from '../ui/barchart';
 
 
 export default function Allchart() {
@@ -16,6 +17,9 @@ export default function Allchart() {
     </Card>
     <Card>
         <AreaChart></AreaChart>
+    </Card>
+    <Card>
+      <Barchart></Barchart>
     </Card>
     </>
   )
