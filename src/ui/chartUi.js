@@ -17,6 +17,8 @@ import AreaChart from "./areaChart";
 import { Container, TextHeader, Title, TextTitle, PopulationTotal, BoxCard } from "./ui.style";
 import ContainerCardReport from "../components/TitleCardReport";
 import { Avatar } from 'antd';
+import CardBarChart from "../components/CardBarChart";
+import Columnchart from "./Columnchart";
 
 
 const ChartUi = () => {
@@ -59,28 +61,73 @@ const ChartUi = () => {
         </ContainerCardReport>
 
         <BoxCard>
-          {/* <CardBarChart />
-          <ChartCard title="สถิตช่วงอายุของชาวต่างชาติ" /> */}
-          <div>dfsf</div>
+           <ContainerCardReport>
+            <PiechartHook />
+          </ContainerCardReport>
+
+          <GraphCol className="chartcol">
+          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <Columnchart></Columnchart>
+          </GraphCol>
         </BoxCard>
 
         <BoxCard>
           <ContainerCardReport>
+            <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
             <PiechartHook />
           </ContainerCardReport>
+
           <ContainerCardReport>
+          <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
             <PiechartHook />
           </ContainerCardReport>
+
           <ContainerCardReport>
+          <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
             <PiechartHook />
           </ContainerCardReport>
         </BoxCard>
+
+        <BoxCard>
+
+        <GraphCol className="chartrow">
+          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <Columnchart></Columnchart>
+          </GraphCol>
+
+
+        {/* <GraphCol className="chartcol">
+          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <Columnchart></Columnchart>
+          </GraphCol> */}
+        </BoxCard>
+
       </Container>
     </>
   );
 };
 
 export default ChartUi;
+
+const GraphCol = styled.div`
+  width: ${props => (props.width ? props.width : '100%')};
+  height: ${props => (props.height ? props.height : '100%')};
+  background: ${props =>
+    props.background ? props.background : `var(--white)`};
+  box-shadow: ${props => (props.isPdfReport ? '0px' : '0px 1px 16px #eaeaea')};
+  border: ${props => (props.isPdfReport ? '1px solid #eaeaea' : '0px')};
+  border-radius: 26px;
+  color: ${props => (props.color ? props.color : `#1d1d42`)};
+  padding: ${props => (props.padding ? props.padding : '20px')};
+
+`
+export const TitleCard = styled.span`
+  font-size: 18px;
+  color: #1d1d42;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+`
 
 
 

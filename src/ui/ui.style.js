@@ -2,6 +2,9 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: grid;
   gap: ${props => (props.gap ? `${props.gap}` : '20px')};
+
+
+ 
 `
 
 export const Title = styled.h1`
@@ -56,4 +59,14 @@ export const BoxCard = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+
+
+
+  .chartcol{
+    grid-column:2/span 3;
+    grid-row:1 /span 5;
+  }
+
+ 
+
 `
