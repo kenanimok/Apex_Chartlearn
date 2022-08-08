@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "antd/dist/antd.css";
-import "./layout.css";
 import {
   DesktopOutlined,
   FileOutlined,
@@ -14,6 +13,7 @@ import styled from "styled-components";
 import { Card } from "antd";
 import PiechartHook from "../PieHook";
 import SampleLine from "./Columnchart";
+import AreaChart from "./areaChart";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -29,18 +29,13 @@ function getItem(label, key, icon, children) {
 const items = [];
 
 const ChartUi = () => {
-  const [collapsed, setCollapsed] = useState(false);
   return (
-    <Layout
+       <Layout
       style={{
         minHeight: "100vh",
       }}
     >
-      <Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
-      >
+      <Sider >
         <div className="logo" />
         <Menu
           theme="dark"
@@ -49,7 +44,7 @@ const ChartUi = () => {
           items={items}
         />
       </Sider>
-      <Layout className="site-layout">
+      <LayoutBg className="site-layout">
         <Header
           className="site-layout-background"
           style={{
@@ -70,37 +65,46 @@ const ChartUi = () => {
           </ContainerHead>
 
 
-           {/* <ContainerBody>
-              <ItemBody className="item1">dddddd</ItemBody>
-              <ItemBody>dddddd</ItemBody>
-              <ItemBody>dddddd</ItemBody>
-              <ItemBody>dddddd</ItemBody>
-            </ContainerBody> */}
-            <Row>
-            <Colum span={12} style={{border:"2px"}}> <PiechartHook></PiechartHook>   </Colum>
-            <Colum span={12} >
-              {/* <Colum> <Row><CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard></Row> </Colum>
-              <Colum> <Row><CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard></Row> </Colum>
-              <Colum> <Row><CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard></Row> </Colum> */}
-                <Row> <CsCard><PiechartHook></PiechartHook></CsCard> <CsCard><PiechartHook></PiechartHook></CsCard> </Row>
-                <Row> <CsCard><PiechartHook></PiechartHook></CsCard></Row>
-                <Row> <CsCard><PiechartHook></PiechartHook></CsCard></Row>
+           <ContainerBody>
+              <ItemBody className="item1"> <AreaChart/>  </ItemBody>
+             
+              <ItemBody> 
+                <ConTitleBody> <span>อำเภอมืองภูเก็ต</span>  <span>54,000 คน</span> </ConTitleBody>
+                    <Bodycard>
+                    <PiechartHook></PiechartHook>
+                    <PiechartHook></PiechartHook>
 
-            </Colum>
-            
-
-
-            </Row>
-         
-
-
-        </Contentlayout>
-      </Layout>
+                    </Bodycard>
+                     
+              </ItemBody>
+              <ItemBody> 
+                <ConTitleBody>อำเภอมืองภูเก็ต    อำเภอมืองภูเก็ต </ConTitleBody>
+                     <PiechartHook></PiechartHook>
+              </ItemBody>
+              <ItemBody> 
+                <ConTitleBody>อำเภอมืองภูเก็ต    อำเภอมืองภูเก็ต </ConTitleBody>
+                     <PiechartHook></PiechartHook>
+              </ItemBody>         
+            </ContainerBody> 
+         </Contentlayout>
+        </LayoutBg>
     </Layout>
   );
 };
 
 export default ChartUi;
+const LayoutBg = styled(Layout)`
+.site-layout-background {
+    background: #F8F8F8;
+  }
+  .logo {
+    height: 32px;
+    margin: 16px;
+    background: #001529;
+}
+  
+`
+
 
 const Contentlayout = styled(Content)`
   background: #f8f8f8;
@@ -114,7 +118,8 @@ const CardHead = styled.div`
   margin-left: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
-  border-right: solid black;
+  /* border-right: solid black; */
+
 `;
 
 const Titilecard = styled.p`
@@ -170,9 +175,10 @@ const ContainerBody = styled.div`
  display: grid;
   grid-template-columns: auto auto ;
   grid-gap: 10px;
-  background-color: #2196F3;
+  background-color: #f8f8f8;
   padding: 10px;
- height: 100vh;
+ /* height: 100vh; */
+
   .item1 {
   grid-row: 1 / span 3;
 }
@@ -180,20 +186,25 @@ const ContainerBody = styled.div`
 
 const ItemBody = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-
+  
 `
 
-const Colum = styled(Col)`
-background-color: white;
-/* width: 100%;
-height: 1076px; */
-`
 
-const CsCard = styled(Card)`
-display:  flex;
+const ConTitleBody = styled.div`
+background-color: #F9F9F9;
+margin: 10px;
+width: 725px;
+height: 50px;
+display: flex;
+justify-content: space-between;
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+align-items: center;
+`
+const Bodycard = styled.div`
+display: flex;
 flex-direction: row;
-justify-content: start;
 `
+

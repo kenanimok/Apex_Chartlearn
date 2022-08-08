@@ -1,4 +1,7 @@
 import Allchart from './allChart/all';
+import Corelayout from './components/layout/corelayout';
+import Sidebar from './components/nav';
+import Sider from './components/nav';
 import logo from './logo.svg';
 import PiechartHook from './PieHook';
 import AreaChart from './ui/areaChart';
@@ -13,8 +16,13 @@ function App() {
     <div >
       {/* <PieChartken></PieChartken> */}
       {/* <PiechartHook></PiechartHook> */}
+      <Corelayout>
+      <ChartUi></ChartUi>
+      </Corelayout>
+
+
       {/* <ChartUi></ChartUi> */}
-      <Allchart/>
+      {/* <Allchart/> */}
       {/* <Columnchart/>
       <AreaChart/> */}
       {/* <Barchart></Barchart> */}
