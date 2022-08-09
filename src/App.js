@@ -14,18 +14,14 @@ import Columnchart from './ui/Columnchart';
 function App() {
   return (
     <div >
-      {/* <PieChartken></PieChartken> */}
-      {/* <PiechartHook></PiechartHook> */}
+
       <Corelayout>
       <ChartUi></ChartUi>
       </Corelayout>
 
+      {/* <Allchart></Allchart> */}
 
-      {/* <ChartUi></ChartUi> */}
-      {/* <Allchart/> */}
-      {/* <Columnchart/>
-      <AreaChart/> */}
-      {/* <Barchart></Barchart> */}
+      
     </div>
   );
 }

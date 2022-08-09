@@ -61,47 +61,46 @@ const ChartUi = () => {
         </ContainerCardReport>
 
         <BoxCard>
-           <ContainerCardReport>
-            <PiechartHook />
-          </ContainerCardReport>
+         <GraphCol   className="">
+          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+          </GraphCol>
 
           <GraphCol className="chartcol">
           <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
             <Columnchart></Columnchart>
           </GraphCol>
-        </BoxCard>
 
-        <BoxCard>
-          <ContainerCardReport>
+        <ContainerCardReport>
             <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
             <PiechartHook />
           </ContainerCardReport>
 
-          <ContainerCardReport>
-          <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
-            <PiechartHook />
-          </ContainerCardReport>
 
-          <ContainerCardReport>
-          <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
-            <PiechartHook />
-          </ContainerCardReport>
-        </BoxCard>
-
-        <BoxCard>
-
-        <GraphCol className="chartrow">
+          <GraphCol className="chartmap">
           <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-            <Columnchart></Columnchart>
+          <PiechartHook />
           </GraphCol>
 
 
-        {/* <GraphCol className="chartcol">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-            <Columnchart></Columnchart>
-          </GraphCol> */}
-        </BoxCard>
 
+          <GraphCol className="">
+          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+          <PiechartHook />
+          </GraphCol>
+
+
+
+          <GraphCol className="chartall">
+          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+          <AreaChart/>
+          </GraphCol>
+
+          <GraphCol className="">
+          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+          <PiechartHook />
+          </GraphCol>
+
+        </BoxCard>
       </Container>
     </>
   );
@@ -120,6 +119,11 @@ const GraphCol = styled.div`
   color: ${props => (props.color ? props.color : `#1d1d42`)};
   padding: ${props => (props.padding ? props.padding : '20px')};
 
+/* display: flex;
+justify-content: center;
+align-items: center;
+ */
+
 `
 export const TitleCard = styled.span`
   font-size: 18px;
@@ -127,6 +131,23 @@ export const TitleCard = styled.span`
   line-height: 22px;
   display: flex;
   align-items: center;
+`
+
+export const BoxMap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(2,1fr); */
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+
+
+
+
+
 `
 
 

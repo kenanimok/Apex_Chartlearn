@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
+  /* background-color: red; */
 `
 
 
@@ -14,6 +15,7 @@ const Layout = styled.div`
   width: 100%;
   height: 100%;
   transition: width 0.3s;
+
 
   .container {
     width: 100%;

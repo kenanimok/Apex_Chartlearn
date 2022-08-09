@@ -11,7 +11,9 @@ function PiechartHook()
                 width={300}
                 height={600}
 
+                // series={ [] }    
                 series={ [33,55,77,99,33,44] }                
+            
                 options={{
                         // title:{ text:"Student PieChart"
                         // } , 

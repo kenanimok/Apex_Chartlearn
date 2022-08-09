@@ -5,9 +5,22 @@ export default function Columnchart() {
       {
         name: "Temperature in Fahrenheit", //will be displayed on the y-axis
         data: [21203, 11203, 7211, 5111,4000,3993,3873,2203,2101,2021]
+        // data:[]
       }
     ];
     const options = {
+      noData: {
+        text: undefined,
+        align: 'center',
+        verticalAlign: 'middle',
+        offsetX: 0,
+        offsetY: 0,
+        style: {
+          color: undefined,
+          fontSize: '14px',
+          fontFamily: undefined
+        }
+      },
       chart: {
         id: "simple-bar",
         toolbar:{
