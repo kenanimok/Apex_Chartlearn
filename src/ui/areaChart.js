@@ -25,7 +25,7 @@ export default function AreaChart() {
     };
     return (
       <div>
-        <Chart options={options} type="area" series={series} height="400" width="95%" />
+        <Chart options={options} type="area" series={series} height="500" width="100%" />
       </div>
     );
   }

@@ -19,6 +19,7 @@ import ContainerCardReport from "../components/TitleCardReport";
 import { Avatar } from 'antd';
 import CardBarChart from "../components/CardBarChart";
 import Columnchart from "./Columnchart";
+import Barchart from "./barchart";
 
 
 const ChartUi = () => {
@@ -51,7 +52,7 @@ const ChartUi = () => {
         >
           <Row>
             <Col span={12} className="col-center">
-            <Avatar size="large" icon={<UserOutlined />} />
+              <Avatar size="large" icon={<UserOutlined />}   />
               <TextTitle>จำนวนชาวต่างชาติทั้งหมด (คน)</TextTitle>
             </Col>
             <Col span={12} >
@@ -61,43 +62,74 @@ const ChartUi = () => {
         </ContainerCardReport>
 
         <BoxCard>
-         <GraphCol   className="">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+          <GraphCol className="">
+            <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <CardHuman>
+            <Avatar size="large" icon={<UserOutlined />} /> 
+            <TextHuman>ชาย</TextHuman>
+              <Progress>
+                <div class="bar albanian">50.34%</div>
+              </Progress>
+              <div>12312312</div>
+            </CardHuman>
+
+
+            <CardHuman>
+            <Avatar size="large" icon={<UserOutlined />} />
+            <TextHuman>หญิง</TextHuman>
+              <Progress>
+                <div class="bar albanian">50.34%</div>
+              </Progress>
+              <div>12312312</div>
+            </CardHuman>
+
+
+            <CardHuman>
+            <Avatar size="large" icon={<UserOutlined />} />
+            <TextHuman>ไม่ระบุ<br></br>เพศ</TextHuman>
+
+              <Progress>
+                <div class="bar albanian">50.34%</div>
+              </Progress>
+              <div>12312312</div>
+            </CardHuman>
+
+            {/* <Barchart/> */}
           </GraphCol>
 
           <GraphCol className="chartcol">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
             <Columnchart></Columnchart>
           </GraphCol>
 
-        <ContainerCardReport>
+          <ContainerCardReport>
             <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
             <PiechartHook />
           </ContainerCardReport>
 
 
           <GraphCol className="chartmap">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-          <PiechartHook />
+            <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            {/* <PiechartHook /> */}
           </GraphCol>
 
 
 
           <GraphCol className="">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-          <PiechartHook />
+            <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <PiechartHook />
           </GraphCol>
 
 
 
           <GraphCol className="chartall">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-          <AreaChart/>
+            <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <AreaChart />
           </GraphCol>
 
           <GraphCol className="">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-          <PiechartHook />
+            <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <PiechartHook />
           </GraphCol>
 
         </BoxCard>
@@ -143,14 +175,53 @@ export const BoxMap = styled.div`
   width: 100%;
   height: 100%;
 
+`
 
+const Progress = styled.div`
+  
 
+  width: 60%;
+  height:  40px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #b0b0;
+  background-color: #ededed;
 
+  .bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 20em;
+    color: white;
+    font-family: "Prompt";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .bar.albanian {
+    width: 50%;
+    height: 40px;
+    background-color: #FFA336;
+
+  }
+`;
+
+const CardHuman = styled.div`
+display: flex;
+flex-direction: row;
+margin-top: 30px;
+align-items: center; 
+justify-content: space-evenly;
+`
+
+const TextHuman =styled.div`
+/* margin: 10px; */
 
 
 `
-
-
 
 
 

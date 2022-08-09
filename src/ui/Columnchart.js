@@ -34,6 +34,11 @@ export default function Columnchart() {
 
       xaxis: {
         categories: ["บริติช", "เยอรมนี", "รัสเซีย", "อินเดีย","มาเลเซีย","ออสเตรเลีย","ซาอุดีอาระเบีย","สิงคโปร์"," สหรัฐอเมริกา","ฝรั่งเศส"] //will be displayed on the x-asis
+      },
+      tooltip:{
+          marker:{
+            show:true
+          }
       }
     };
     return (

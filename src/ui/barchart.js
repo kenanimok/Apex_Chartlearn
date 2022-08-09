@@ -53,9 +53,9 @@ function Barchart() {
             return val + "%";
           }
         },
-        title: {
-          text: "Customer Satisfaction"
-        },
+        // title: {
+        //   text: "Customer Satisfaction"
+        // },
         grid: {
           yaxis: {
             lines: {
@@ -81,7 +81,7 @@ function Barchart() {
       };
   return (
     <div>
-        <Chart options={options} type="bar" series={series}  height="100%" width="80%" ></Chart>
+        <Chart options={options} type="bar" series={series}  height="150%" width="100%" ></Chart>
     </div>
   )
 }
