@@ -8,8 +8,8 @@ function PiechartHook()
             <div className="container-fluid mb-3">
                 <Charts 
                 type="donut"
-                width={380}
-                height={700}
+                width={400}
+                height={600}
 
                 // series={ [] }    
                 series={ [33,55,77,99,33,44] }                
@@ -20,7 +20,7 @@ function PiechartHook()
                         plotOptions: {
                           pie:{
                               donut: {
-                                size: '80%',
+                                size: '85%',
                                 // endigShape: "rounded",
                                 // borderRadius: 10,
                               }

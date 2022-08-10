@@ -79,10 +79,4 @@ export const BoxCard = styled.div`
 
 
 
-
-
-
-
- 
-
 `

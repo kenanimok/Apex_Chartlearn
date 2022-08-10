@@ -149,12 +149,6 @@ const GraphCol = styled.div`
   border-radius: 26px;
   color: ${props => (props.color ? props.color : `#1d1d42`)};
   padding: ${props => (props.padding ? props.padding : '20px')};
-
-/* display: flex;
-justify-content: center;
-align-items: center;
- */
-
 `
 export const TitleCard = styled.span`
   font-size: 18px;
@@ -164,21 +158,7 @@ export const TitleCard = styled.span`
   align-items: center;
 `
 
-export const BoxMap = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(2,1fr); */
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-
-`
-
 const Progress = styled.div`
-  
-
   width: 60%;
   height:  40px;
   border-radius: 10px;

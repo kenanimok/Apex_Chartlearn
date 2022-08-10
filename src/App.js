@@ -1,13 +1,13 @@
 import Corelayout from './components/layout/corelayout';
 import DashboardPage8 from './ui/DashboardPage8';
-import DashboardPage9 from './ui/DashboardPage9';
+import DashboardPages9 from './ui_Page9/DashboardPages9';
 function App() {
   return (
     <div >
 
       <Corelayout>
         {/* <DashboardPage8></DashboardPage8> */}
-        <DashboardPage9/>
+        <DashboardPages9/>
 
       </Corelayout>
 

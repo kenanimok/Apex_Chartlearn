@@ -43,7 +43,7 @@ export default function Columnchart() {
     };
     return (
       <div>
-        <Chart options={options} type="bar" series={series} height="100%" width="95%" />
+        <Chart options={options} type="bar" series={series} height="500" width="95%" />
       </div>
     );
   }

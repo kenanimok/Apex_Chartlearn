@@ -1,7 +1,6 @@
 import Sider from 'antd/lib/layout/Sider'
 import React from 'react'
 import styled from 'styled-components'
-import Sidebar from '../nav'
 
 export const Container = styled.div`
   display: flex;
@@ -15,7 +14,6 @@ const Layout = styled.div`
   width: 100%;
   height: 100%;
   transition: width 0.3s;
-
 
   .container {
     width: 100%;
