@@ -101,21 +101,63 @@ overflow: auto;
 
 
 
-p{
+/* p{
   display: flex;
   align-items: center;
-}
+} */
 
-p:nth-child(even) {
+/* p:nth-child(even) {
     background-color: #F8F8F8;
-    border-radius: 16px;
     width: 100%;
     height: 48px;
 
-}
+} */
+`
+
+export const CountryContent =styled.div`
+
+
+
 
 `
 
+export const Era = styled.p`
+display: flex;
+align-items: center;
+justify-content: end;
+padding-right: 20px;
+
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+
+:nth-child(even) {
+    background-color: #F8F8F8;
+    /* border-radius: 16px; */
+    border-top-right-radius:16px;
+    border-bottom-right-radius:16px;
+    width: 100%;
+    height: 48px;
+}
+`
+
+
+export const CountryCtn = styled.p`
+display: flex;
+align-items: center;
+justify-content: start;
+padding-left: 20px;
+
+:nth-child(even) {
+    background-color: #F8F8F8;
+    /* border-radius: 16px; */
+    border-top-left-radius:16px;
+    border-bottom-left-radius:16px;
+    width: 100%;
+    height: 48px;
+}
+`
 
 
 

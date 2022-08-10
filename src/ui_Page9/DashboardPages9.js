@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, TextHeader, Title, TextTitle, PopulationTotal, BoxCard ,TextPickDate, Cardmain, BoxHead, Country, TitleCard} from "./uiPages9.style";
+import { Container, TextHeader, Title, TextTitle, PopulationTotal, BoxCard ,TextPickDate, Cardmain, BoxHead, Country, TitleCard, CountryContent, CountryCtn, Era} from "./uiPages9.style";
 import ContainerCardReport from "../components/TitleCardReport";
 import { Row,Col, Card } from 'antd';
 import { Avatar } from 'antd';
@@ -69,15 +69,29 @@ export default function DashboardPages9() {
     <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
           <PiechartHook/>
           <Country>
-          <p>เยอรมัน</p>
-          <p>เยอรมัน</p>
-          <p>เยอรมัน</p>
-          <p>เยอรมัน</p>
-          <p>เยอรมัน</p>
-          <p>เยอรมัน</p>
+            <Row>
+              <Col span={12}>
+                <CountryContent>
+                  <CountryCtn>เยอรมนี</CountryCtn>
+                  <CountryCtn>เยอรมนี</CountryCtn>
+                  <CountryCtn>เยอรมนี</CountryCtn>
+                  <CountryCtn>เยอรมนี</CountryCtn>
+                                    <CountryCtn>เยอรมนี</CountryCtn>
 
+                </CountryContent>
+                
+              </Col>
+              <Col span={12}>
+              <CountryContent>
+                <Era>2012</Era>
+                <Era>2012</Era>
+                <Era>2012</Era>
+                <Era>2012</Era>
 
-
+                  
+              </CountryContent>
+              </Col>
+            </Row>
           </Country>
         </Cardmain>
 
@@ -91,7 +105,6 @@ export default function DashboardPages9() {
 
 
         <Cardmain className='chartmap'>
-        {/* <PiechartHook/> */}
         </Cardmain>
 
 
@@ -99,9 +112,7 @@ export default function DashboardPages9() {
           <Columnchart/>
         </Cardmain>
 
-        {/* <Cardmain className=''>
-        <PiechartHook/>
-        </Cardmain> */}
+    
 
       </BoxCard>
 
