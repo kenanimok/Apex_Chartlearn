@@ -11,18 +11,17 @@ import {
 import { Breadcrumb, Layout, Menu } from "antd";
 import styled from "styled-components";
 import { Card } from "antd";
-import PiechartHook from "../PieHook";
-import SampleLine from "./Columnchart";
-import AreaChart from "./areaChart";
 import { Container, TextHeader, Title, TextTitle, PopulationTotal, BoxCard } from "./ui.style";
 import ContainerCardReport from "../components/TitleCardReport";
 import { Avatar } from 'antd';
 import CardBarChart from "../components/CardBarChart";
-import Columnchart from "./Columnchart";
-import Barchart from "./barchart";
+import  female from "../images/png/female.png"
+import Columnchart from "../Chart/Columnchart";
+import AreaChart from "../Chart/areaChart";
+import PiechartHook from "../Chart/Donutchart";
 
 
-const ChartUi = () => {
+const DashboardPage8 = () => {
   return (
     <>
       <Title>ภาพรวมชาวต่างชาติในจังหวัดภูเก็ต</Title>
@@ -75,7 +74,7 @@ const ChartUi = () => {
 
 
             <CardHuman>
-            <Avatar size="large" icon={<UserOutlined />} />
+            {/* <Avatar size="large>z */}
             <TextHuman>หญิง</TextHuman>
               <Progress>
                 <div class="bar albanian">50.34%</div>
@@ -138,7 +137,7 @@ const ChartUi = () => {
   );
 };
 
-export default ChartUi;
+export default DashboardPage8;
 
 const GraphCol = styled.div`
   width: ${props => (props.width ? props.width : '100%')};

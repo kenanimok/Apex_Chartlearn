@@ -12,7 +12,7 @@ export const Title = styled.h1`
   font-weight: 600;
   font-size: 28px;
   color: #1d1d42;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 `
 
 export const TextHeader = styled.div`
