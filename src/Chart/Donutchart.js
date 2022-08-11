@@ -44,7 +44,7 @@ function PiechartHook()
                        noData:{text:"Empty Data"},                        
                       // colors:["#f90000","#f0f"],
                       labels:['เยอรมัน','รัสเซีย','อินเดีย','มาเลเซีย','ออสเตเรีย','อื่นๆ']  ,                   
-                      colors: ['#000000', '#767676', '#D5D5D5', '#BFBFBF','#9C9C9C','#3A3A3A'],
+                      colors: ['#FFA336', '#4786FF', '#23146C', '#5D38FA','#9C9C9C','#3A3A3A'],
                       dataLabels: {
                         enabled: false
                       },

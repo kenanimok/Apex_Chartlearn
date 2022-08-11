@@ -15,6 +15,34 @@ import Columnchart from '../Chart/Columnchart';
 
 
 export default function DashboardPages9() {
+
+const List=[
+  {
+  count:"japan",
+  era:2010
+},
+{
+  count:"japan",
+  era:2010
+},
+{
+  count:"japan",
+  era:2010
+},
+{
+  count:"japan",
+  era:2010
+},
+{
+  count:"japan",
+  era:2010
+},
+{
+  count:"japan",
+  era:2010
+}
+]
+
   return (
     <>
       <Title>จำนวนชาวต่างชาติแบ่งตามพื้นที่</Title>
@@ -26,7 +54,6 @@ export default function DashboardPages9() {
             </Col>
             <Col span={12} className="col-button">
               <TextPickDate>เลือกวันที่</TextPickDate>
-              {/* <ReportDatePicker picker={reportType} onChange={onChange} width="400px" disabled={loading} /> */}
             </Col>
           </Row>
         </ContainerCardReport>
@@ -68,31 +95,20 @@ export default function DashboardPages9() {
         <Cardmain paddin='0'>
     <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
           <PiechartHook/>
-          <Country>
-            <Row>
-              <Col span={12}>
-                <CountryContent>
-                  <CountryCtn>เยอรมนี</CountryCtn>
-                  <CountryCtn>เยอรมนี</CountryCtn>
-                  <CountryCtn>เยอรมนี</CountryCtn>
-                  <CountryCtn>เยอรมนี</CountryCtn>
-                                    <CountryCtn>เยอรมนี</CountryCtn>
+          <CountryContent>
+            {List.map((item)=>{
+              return(
+                <Country>
+                   <p>{item.count}</p> <p>{item.era}</p>
+                </Country>
+              )
+            })}
+     
+    
+          </CountryContent>
+      
 
-                </CountryContent>
-                
-              </Col>
-              <Col span={12}>
-              <CountryContent>
-                <Era>2012</Era>
-                <Era>2012</Era>
-                <Era>2012</Era>
-                <Era>2012</Era>
-
-                  
-              </CountryContent>
-              </Col>
-            </Row>
-          </Country>
+          
         </Cardmain>
 
         <Cardmain>
