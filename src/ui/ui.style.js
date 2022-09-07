@@ -1,11 +1,8 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 export const Container = styled.div`
   display: grid;
-  gap: ${props => (props.gap ? `${props.gap}` : '20px')};
-
-
- 
-`
+  gap: ${(props) => (props.gap ? `${props.gap}` : "20px")};
+`;
 
 export const Title = styled.h1`
   font-family: Prompt;
@@ -13,11 +10,11 @@ export const Title = styled.h1`
   font-size: 28px;
   color: #1d1d42;
   margin-bottom: 30px;
-`
+`;
 
 export const TextHeader = styled.div`
   font-weight: 500;
-  font-size: ${props => (props.fontSize ? `${props.fontSize}` : '24px')};
+  font-size: ${(props) => (props.fontSize ? `${props.fontSize}` : "24px")};
   color: #1d1d42;
 
   p {
@@ -31,7 +28,7 @@ export const TextHeader = styled.div`
     font-size: 14px;
     color: #b1b1b1;
   }
-`
+`;
 
 export const TextTitle = styled.span`
   margin-left: 18px;
@@ -39,8 +36,7 @@ export const TextTitle = styled.span`
   color: white;
   display: block;
   line-height: 22px;
-`
-
+`;
 
 export const PopulationTotal = styled.span`
   font-weight: 500;
@@ -48,8 +44,7 @@ export const PopulationTotal = styled.span`
   color: white;
   display: flex;
   justify-content: end;
-`
-
+`;
 
 export const BoxCard = styled.div`
   display: grid;
@@ -60,13 +55,8 @@ export const BoxCard = styled.div`
   width: 100%;
   height: 100%;
 
-
-
-  .chartcol{
-    grid-column:2/span 3;
-    grid-row:1 /span 5;
+  .chartcol {
+    grid-column: 1 / span 3;
+    /* grid-row: 1 / span 5; */
   }
-
- 
-
-`
+`;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Row } from 'antd'
+import { Col, Row } from "antd";
 import "antd/dist/antd.css";
 import {
   DesktopOutlined,
@@ -14,12 +14,18 @@ import { Card } from "antd";
 import PiechartHook from "../PieHook";
 import SampleLine from "./Columnchart";
 import AreaChart from "./areaChart";
-import { Container, TextHeader, Title, TextTitle, PopulationTotal, BoxCard } from "./ui.style";
+import {
+  Container,
+  TextHeader,
+  Title,
+  TextTitle,
+  PopulationTotal,
+  BoxCard,
+} from "./ui.style";
 import ContainerCardReport from "../components/TitleCardReport";
-import { Avatar } from 'antd';
+import { Avatar } from "antd";
 import CardBarChart from "../components/CardBarChart";
 import Columnchart from "./Columnchart";
-
 
 const ChartUi = () => {
   return (
@@ -51,22 +57,22 @@ const ChartUi = () => {
         >
           <Row>
             <Col span={12} className="col-center">
-            <Avatar size="large" icon={<UserOutlined />} />
+              <Avatar size="large" icon={<UserOutlined />} />
               <TextTitle>จำนวนชาวต่างชาติทั้งหมด (คน)</TextTitle>
             </Col>
-            <Col span={12} >
+            <Col span={12}>
               <PopulationTotal>90,021</PopulationTotal>
             </Col>
           </Row>
         </ContainerCardReport>
 
         <BoxCard>
-           <ContainerCardReport>
+          {/* <ContainerCardReport>
             <PiechartHook />
-          </ContainerCardReport>
+          </ContainerCardReport> */}
 
           <GraphCol className="chartcol">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
+            <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
             <Columnchart></Columnchart>
           </GraphCol>
         </BoxCard>
@@ -78,30 +84,17 @@ const ChartUi = () => {
           </ContainerCardReport>
 
           <ContainerCardReport>
-          <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
+            <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
             <PiechartHook />
           </ContainerCardReport>
 
           <ContainerCardReport>
-          <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
+            <TitleCard>จำนวนชาวต่างชาติจำแนกตามเพศ</TitleCard>
             <PiechartHook />
           </ContainerCardReport>
         </BoxCard>
 
-        <BoxCard>
-
-        <GraphCol className="chartrow">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-            <Columnchart></Columnchart>
-          </GraphCol>
-
-
-        {/* <GraphCol className="chartcol">
-          <TitleCard>สถิตช่วงอายุของชาวต่างชาติ</TitleCard>
-            <Columnchart></Columnchart>
-          </GraphCol> */}
-        </BoxCard>
-
+        <BoxCard></BoxCard>
       </Container>
     </>
   );
@@ -110,35 +103,21 @@ const ChartUi = () => {
 export default ChartUi;
 
 const GraphCol = styled.div`
-  width: ${props => (props.width ? props.width : '100%')};
-  height: ${props => (props.height ? props.height : '100%')};
-  background: ${props =>
+  width: ${(props) => (props.width ? props.width : "100%")};
+  height: ${(props) => (props.height ? props.height : "100%")};
+  background: ${(props) =>
     props.background ? props.background : `var(--white)`};
-  box-shadow: ${props => (props.isPdfReport ? '0px' : '0px 1px 16px #eaeaea')};
-  border: ${props => (props.isPdfReport ? '1px solid #eaeaea' : '0px')};
+  box-shadow: ${(props) =>
+    props.isPdfReport ? "0px" : "0px 1px 16px #eaeaea"};
+  border: ${(props) => (props.isPdfReport ? "1px solid #eaeaea" : "0px")};
   border-radius: 26px;
-  color: ${props => (props.color ? props.color : `#1d1d42`)};
-  padding: ${props => (props.padding ? props.padding : '20px')};
-
-`
+  color: ${(props) => (props.color ? props.color : `#1d1d42`)};
+  padding: ${(props) => (props.padding ? props.padding : "20px")};
+`;
 export const TitleCard = styled.span`
   font-size: 18px;
   color: #1d1d42;
   line-height: 22px;
   display: flex;
   align-items: center;
-`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+`;
