@@ -1,7 +1,8 @@
 import Sider from "antd/lib/layout/Sider";
 import React from "react";
 import styled from "styled-components";
-import Sidebar from "../nav";
+import Sidenav from "../Sidenav/sidenav";
+import Tobnav from "../Tobnav/tobnav";
 
 export const Container = styled.div`
   display: flex;
@@ -36,7 +37,9 @@ export default function Corelayout(props) {
   return (
     <>
       <Container>
+        <Sidenav />
         <Layout padding={padding}>
+          <Tobnav />
           <div className="container">
             {title && <Title>{title}</Title>}
             {props.children}
