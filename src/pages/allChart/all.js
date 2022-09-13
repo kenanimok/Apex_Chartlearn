@@ -1,10 +1,13 @@
 import React from "react";
-import PiechartHook from "../PieHook";
+// import PiechartHook from "../../PieHook";
 import { Card } from "antd";
-import Columnchart from "../ui/Columnchart";
-import AreaChart from "../ui/areaChart";
-import Barchart from "../ui/barchart";
+// import Columnchart from "../../ui/Columnchart";
+// import AreaChart from "../../ui/areaChart";
+// import Barchart from "../../ui/barchart";
 import styled from "styled-components";
+import PiechartHook from "../../PieHook";
+import Columnchart from "../../ui/Columnchart";
+import AreaChart from "../../ui/areaChart";
 
 export default function Allchart() {
   return (
@@ -19,7 +22,8 @@ export default function Allchart() {
         <AreaChart></AreaChart>
       </Card>
       <Card style={{ display: "inline" }}>
-        <Barchart></Barchart>
+        {/* <Barchart></Barchart> */}
+        {/* <Barchart */}
       </Card>
       <Card>
         <Progress>
@@ -58,7 +62,6 @@ const Progress = styled.div`
   .bar.albanian {
     width: 50%;
     height: 32px;
-    background-color: #FFA336;
-
+    background-color: #ffa336;
   }
 `;

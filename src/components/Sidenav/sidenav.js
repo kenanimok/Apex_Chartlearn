@@ -12,7 +12,7 @@ import {
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import ChartUi from "../../ui/chartUi";
+import ChartUi from "../../pages/chartui/chartUi";
 const { Header, Content, Footer, Sider } = Layout;
 const Sidenav = () => {
   const [collapsed, setCollapsed] = useState(true);

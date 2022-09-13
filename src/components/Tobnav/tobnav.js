@@ -8,7 +8,7 @@ export default function Tobnav() {
   return (
     <>
       <TopHeader>
-        <Header>kkk</Header>
+        <Header>Header</Header>
       </TopHeader>
     </>
   );
