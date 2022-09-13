@@ -1,15 +1,15 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
-  width: ${props => (props.width ? props.width : '100%')};
-  height: ${props => (props.height ? props.height : '100%')};
-  background: ${props =>
-    props.background ? props.background : `var(--white)`};
-  box-shadow: ${props => (props.isPdfReport ? '0px' : '0px 1px 16px #eaeaea')};
-  border: ${props => (props.isPdfReport ? '1px solid #eaeaea' : '0px')};
+  width: ${(props) => (props.width ? props.width : "100%")};
+  height: ${(props) => (props.height ? props.height : "100%")};
+  background: ${(props) => (props.background ? props.background : `white`)};
+  box-shadow: ${(props) =>
+    props.isPdfReport ? "0px" : "0px 1px 16px #eaeaea"};
+  border: ${(props) => (props.isPdfReport ? "1px solid #eaeaea" : "0px")};
   border-radius: 26px;
-  color: ${props => (props.color ? props.color : `#1d1d42`)};
-  padding: ${props => (props.padding ? props.padding : '20px')};
+  color: ${(props) => (props.color ? props.color : `#1d1d42`)};
+  padding: ${(props) => (props.padding ? props.padding : "20px")};
 
   .sub-title {
     font-weight: 400;
@@ -31,6 +31,4 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
   }
-
-  
-`
+`;

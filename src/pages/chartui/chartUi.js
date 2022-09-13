@@ -12,8 +12,8 @@ import { Breadcrumb, Layout, Menu } from "antd";
 import styled from "styled-components";
 import { Card } from "antd";
 import PiechartHook from "../../PieHook";
-import SampleLine from "../../ui/Columnchart";
-import AreaChart from "../../ui/areaChart";
+import SampleLine from "../../components/output/chart/Columnchart";
+import AreaChart from "../../components/output/chart/areaChart";
 import {
   Container,
   TextHeader,
@@ -21,11 +21,11 @@ import {
   TextTitle,
   PopulationTotal,
   BoxCard,
-} from "../../ui/ui.style";
+} from "./ui.style";
 import ContainerCardReport from "../../components/TitleCardReport";
 import { Avatar } from "antd";
 import CardBarChart from "../../components/CardBarChart";
-import Columnchart from "../../ui/Columnchart";
+import Columnchart from "../../components/output/chart/Columnchart";
 
 const ChartUi = () => {
   return (

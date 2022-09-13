@@ -13,6 +13,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import ChartUi from "../../pages/chartui/chartUi";
+import styled from "styled-components";
 const { Header, Content, Footer, Sider } = Layout;
 const Sidenav = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -28,26 +29,43 @@ const Sidenav = () => {
       key: "all",
       icon: <UserOutlined />,
     },
+
+    {
+      label: <Link to="/report">report</Link>,
+      key: "report",
+      icon: <DesktopOutlined />,
+    },
   ];
 
   //   const items = [{ label: "Dashbaord", key: "/", icon: <DesktopOutlined /> }];
   return (
     <>
-      <Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
-        style={{ minHeight: "100vh" }}
-      >
-        <div className="logo" />
-        <Menu
-          theme="dark"
-          //   defaultSelectedKeys={["1"]}
-          mode="inline"
-          items={items}
-        />
-      </Sider>
+      <StyleSide>
+        <Sider
+          collapsible
+          collapsed={collapsed}
+          onCollapse={(value) => setCollapsed(value)}
+          style={{ minHeight: "100vh" }}
+        >
+          <div className="logo" />
+          <Menu
+            theme="dark"
+            //   defaultSelectedKeys={["1"]}
+            mode="inline"
+            items={items}
+          />
+        </Sider>
+      </StyleSide>
     </>
   );
 };
 export default Sidenav;
+
+export const StyleSide = styled.div`
+  .ant-layout-sider {
+    background: #1d1d42;
+  }
+  .ant-menu.ant-menu-dark {
+    background: #1d1d42;
+  }
+`;

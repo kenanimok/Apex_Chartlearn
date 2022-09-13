@@ -6,8 +6,8 @@ import { Card } from "antd";
 // import Barchart from "../../ui/barchart";
 import styled from "styled-components";
 import PiechartHook from "../../PieHook";
-import Columnchart from "../../ui/Columnchart";
-import AreaChart from "../../ui/areaChart";
+import Columnchart from "../../components/output/chart/Columnchart";
+import AreaChart from "../../components/output/chart/areaChart";
 
 export default function Allchart() {
   return (
