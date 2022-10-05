@@ -3,9 +3,8 @@ import Corelayout from "./components/layout/corelayout";
 import ChartUi from "./pages/chartui/chartUi";
 import Allchart from "./pages/allChart/all";
 import Report from "./pages/reportdashboard/report";
-import Form from "./pages/form/form";
 import Froala_t from "./pages/froala/froala";
-
+import Crud_insert from "./pages/form/insert_f";
 function App() {
   return (
     <div>
@@ -19,7 +18,7 @@ function App() {
             <Route path="/" element={<ChartUi />}></Route>
             <Route path="/all" element={<Allchart />}></Route>
             <Route path="/report" element={<Report />} />
-            <Route path="/form" element={<Form />} />
+            <Route path="/form" element={<Crud_insert />} />
             <Route path="/froala" element={<Froala_t />} />
           </Routes>
         </Corelayout>
