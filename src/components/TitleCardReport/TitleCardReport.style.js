@@ -31,4 +31,17 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
   }
+
+  .percent {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 18px;
+    color: #40bea7;
+
+    span {
+      font-size: 16px;
+      font-weight: 400;
+      color: #b1b1b1;
+    }
+  }
 `;

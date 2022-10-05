@@ -35,6 +35,11 @@ const Sidenav = () => {
       key: "report",
       icon: <DesktopOutlined />,
     },
+    {
+      label: <Link to="/form">form</Link>,
+      key: "form",
+      icon: <DesktopOutlined />,
+    },
   ];
 
   //   const items = [{ label: "Dashbaord", key: "/", icon: <DesktopOutlined /> }];

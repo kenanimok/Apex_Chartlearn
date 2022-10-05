@@ -80,9 +80,32 @@ const Report = () => {
                 <PopulationTotal color="red">90,021</PopulationTotal>
               </Col>
             </Row>
-          </ContainerCardReport>
 
-          <ContainerCardReport></ContainerCardReport>
+            <Listdata>
+              <Row>
+                <Col span={12} className="col-center">
+                  นักท่องเที่ยวติดเป็น
+                  <span className="percent">99%</span>
+                  <span className="covid">(นักเดินทางๆๆๆๆ)</span>
+                </Col>
+                <Col span={12} className="col-button">
+                  {/* <PopulationTotal color="red">90,021</PopulationTotal> */}
+                </Col>
+              </Row>
+            </Listdata>
+            <Listdata>
+              <Row>
+                <Col span={12} className="col-center">
+                  นักท่องเที่ยวติดเป็น
+                  <span className="percent">99%</span>
+                  <span className="covid">(นักเดินทางๆๆๆๆ)</span>
+                </Col>
+                <Col span={12} className="col-button">
+                  {/* <PopulationTotal color="red">90,021</PopulationTotal> */}
+                </Col>
+              </Row>
+            </Listdata>
+          </ContainerCardReport>
         </BoxCard>
       </Container>
     </>
@@ -91,12 +114,21 @@ const Report = () => {
 
 export default Report;
 
-const ListData = styled.div`
-  padding: 10;
+export const Listdata = styled.div`
+  width: 100%;
   background-color: #f8f8f8;
   border-radius: 16px;
-
-  p {
-    color: red;
+  padding: 10px;
+  margin: 10px;
+  .percent {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 18px;
+    color: #40bea7;
+  }
+  .covid {
+    font-size: 16px;
+    font-weight: 400;
+    color: #b1b1b1;
   }
 `;

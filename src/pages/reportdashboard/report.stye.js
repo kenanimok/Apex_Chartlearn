@@ -58,7 +58,7 @@ export const TextTitle = styled.span`
   font-size: 18px;
   color: ${(props) => (props.color ? props.color : "white")};
   display: block;
-  line-height: 22px;
+  /* line-height: 22px; */
 `;
 export const BoxCard = styled.div`
   display: grid;
