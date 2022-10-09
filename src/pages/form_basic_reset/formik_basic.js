@@ -1,45 +1,92 @@
 import React from "react";
 import { useFormik } from "formik";
+import { basicSchema } from "../../components/shemas";
+const onSubmit = async (values, actions) => {
+  console.log(values);
+  console.log(actions);
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  actions.resetForm();
+};
 
 const Basic_Useformik = () => {
-  const formik = useFormik({
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    // handleSubmit = ({ value }) => {
+    //   console.logO(value);
+    // },
+  } = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
       email: "",
+      age: "",
+      password: "",
+      confirmPassword: "",
     },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
+    validationSchema: basicSchema,
+    onSubmit,
   });
+  //   console.log(values);
+  //   console.log(errors);
   return (
-    <form onSubmit={formik.handleSubmit} onReset={formik.handleReset}>
-      <label htmlFor="firstName">First Name</label>
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <label htmlFor="email">Email</label>
       <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.firstName}
-      />
-      <label htmlFor="lastName">Last Name</label>
-      <input
-        id="lastName"
-        name="lastName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.lastName}
-      />
-      <label htmlFor="email">Email Address</label>
-      <input
+        value={values.email}
+        onChange={handleChange}
         id="email"
-        name="email"
         type="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
+        placeholder="Enter your email"
+        onBlur={handleBlur}
+        className={errors.email && touched.email ? "input-error" : ""}
       />
-      <button type="submit">Submit</button>
-      <button type="reset">reset</button>
+      {errors.email && touched.email && <p className="error">{errors.email}</p>}
+      <label htmlFor="age">Age</label>
+      <input
+        id="age"
+        type="number"
+        placeholder="Enter your age"
+        value={values.age}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={errors.age && touched.age ? "input-error" : ""}
+      />
+      {errors.age && touched.age && <p className="error">{errors.age}</p>}
+      <label htmlFor="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Enter your password"
+        value={values.password}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={errors.password && touched.password ? "input-error" : ""}
+      />
+      {errors.password && touched.password && (
+        <p className="error">{errors.password}</p>
+      )}
+      <label htmlFor="confirmPassword">Confirm Password</label>
+      <input
+        id="confirmPassword"
+        type="password"
+        placeholder="Confirm password"
+        value={values.confirmPassword}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={
+          errors.confirmPassword && touched.confirmPassword ? "input-error" : ""
+        }
+      />
+      {errors.confirmPassword && touched.confirmPassword && (
+        <p className="error">{errors.confirmPassword}</p>
+      )}
+      <button disabled={isSubmitting} type="submit">
+        Submit
+      </button>
     </form>
   );
 };

@@ -6,6 +6,8 @@ import Report from "./pages/reportdashboard/report";
 import Froala_t from "./pages/froala/froala";
 import Crud_insert from "./pages/form_basic_reset/insert_f";
 import Basic_Useformik from "./pages/form_basic_reset/formik_basic";
+import ValidationSchemaExample from "./pages/form_basic_reset/rp_reactformik_basic";
+import Formik_advance from "./pages/form_basic_reset/formik_advance";
 function App() {
   return (
     <div>
@@ -21,6 +23,8 @@ function App() {
             <Route path="/report" element={<Report />} />
             <Route path="/form" element={<Crud_insert />} />
             <Route path="/useformik" element={<Basic_Useformik />} />
+            <Route path="/valiformik" element={<ValidationSchemaExample />} />
+            <Route path="/advanceformik" element={<Formik_advance />} />
             {/* <Route path="/froala" element={<Froala_t />} /> */}
           </Routes>
         </Corelayout>
