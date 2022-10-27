@@ -1,15 +1,16 @@
-import PieChartken from './Apex_ken';
-import logo from './logo.svg';
-import PiechartHook from './PieHook';
-import ChartUi from './ui/chartUi';
+import React from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import SummaryUser from "./pages/dashboard/summaryUser/summaryUser";
 
 function App() {
   return (
-    <div className="App">
-      {/* <PieChartken></PieChartken> */}
-      {/* <PiechartHook></PiechartHook> */}
-      <ChartUi></ChartUi>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SummaryUser />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
