@@ -15,7 +15,10 @@ import numeral from "numeral";
 const BarchartCustom = ({ data }) => {
   const colors = ["#4786FF", "#FFA336", "#23146C"];
 
+  //   const checkData = data && data?.total_agender === 0;
+
   const checkData = data && data?.total_agender === 0;
+  console.log("checkData", checkData);
 
   const total = data?.percent_male + data?.percent_female;
   const percentMale = (data?.percent_male / total) * 100;
