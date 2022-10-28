@@ -8,9 +8,11 @@ import Corelayout from "../../../components/layout/corelayout/corelayout";
 import Columnchart from "../../../components/chart/columchart/columnchart";
 import MixedChart from "../../../components/chart/mixchart/mixchart";
 import { defaultData } from "./data";
+import BarchartCustom from "../../../components/chart/barchartCustom/barchartCustom";
 
 const SummaryUser = () => {
   const Datas = defaultData.dashboard_data.age_summary_data;
+  const Summarygender = defaultData.dashboard_data.gender_summary_data;
   const [ageSummary, setAgeSummary] = useState({ data: Datas });
 
   const dataGraphMixed = [
@@ -118,7 +120,10 @@ const SummaryUser = () => {
           </ContainerCardReport>
 
           <Boxcard>
-            <ContainerCardReport></ContainerCardReport>
+            <ContainerCardReport>
+              <TitleChart>จำนวนผู้ใช้งานจำแนกตามเพศ</TitleChart>
+              <BarchartCustom data={Summarygender} />
+            </ContainerCardReport>
 
             <ContainerCardReport className="larg">
               <Centercard>
@@ -256,4 +261,19 @@ const Boxcard = styled.div`
 const Centercard = styled.div`
   position: relative;
   top: 10%;
+`;
+
+export const TitleChart = styled.div`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  color: #1d1d42;
+  margin-bottom: ${(props) => props.margin || "20px"};
+
+  span {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 16px;
+    color: #b1b1b1;
+  }
 `;

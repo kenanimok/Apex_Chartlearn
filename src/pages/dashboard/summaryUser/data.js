@@ -30,8 +30,11 @@ export const defaultData = {
       total_female: 58126,
       percent_female: 46.51, //(total_f/total_tourists)*100
       total_male: 103874,
+
       percent_male: 83.11,
-      total_agender: 230,
+      // total_agender: 230,
+      total_agender: 0,
+
       percent_agender: 2.0,
     },
     age_summary_data: [
