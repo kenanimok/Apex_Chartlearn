@@ -1,11 +1,74 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 // import Corelayout from "../../components/layout/corelayout/corelayout";
 import { Col, Row } from "antd";
 import { AiFillFrown } from "react-icons/ai";
 import Corelayout from "../../../components/layout/corelayout/corelayout";
+import Columnchart from "../../../components/chart/columchart/columnchart";
+import MixedChart from "../../../components/chart/mixchart/mixchart";
+import { defaultData } from "./data";
 
 const SummaryUser = () => {
+  const Datas = defaultData.dashboard_data.age_summary_data;
+  const [ageSummary, setAgeSummary] = useState({ data: Datas });
+
+  const dataGraphMixed = [
+    // {
+    //   name: "ชาย",
+    //   type: "column",
+    //   data: ageSummary?.data.map((value) =>
+    //     value.amount_mele !== 0 ? value.amount_male : null
+    //   ),
+
+    //   data: ageSummary?.data.map((value) =>
+    //     value.amount_male !== 0 ? value.amount_male : null
+    //   ),
+    // },
+    {
+      name: "ชาย",
+      type: "column",
+      data: ageSummary?.data.map((value) =>
+        value.amount_mele !== 0 ? value.amount_mele : null
+      ),
+    },
+    {
+      name: "หญิง",
+      type: "column",
+      data: ageSummary?.data.map((value) =>
+        value.amount_female !== 0 ? value.amount_female : null
+      ),
+    },
+    {
+      name: "ไม่ระบุเพศและอายุ",
+      type: "column",
+      data: ageSummary?.data.filter((value) =>
+        value.age_range !== "na_age_gender" ? null : value.amount_agender
+      ),
+    },
+    {
+      name: "จำนวนชาวต่างชาติ",
+      type: "line",
+      data: ageSummary?.data.map((value) => value.total_tourists_gender),
+      percent: ageSummary?.data.map(
+        (percent) => percent.percent_tourists_gender
+      ),
+    },
+  ];
+
+  const xaxisGraphMixed = (data) => {
+    return (
+      data &&
+      data.map((d) =>
+        d.age_range === "na_age"
+          ? "ไม่ระบุอายุ"
+          : d.age_range === "na_age_gender"
+          ? ["ไม่ระบุเพศ", "และอายุ"]
+          : d.age_range
+      )
+    );
+  };
+
   return (
     <>
       <Corelayout>
@@ -35,7 +98,6 @@ const SummaryUser = () => {
               </Col>
             </Row>
           </ContainerCardReport>
-
           <ContainerCardReport
             ppadding="10px 20px"
             background={"#0b2946"}
@@ -58,7 +120,16 @@ const SummaryUser = () => {
           <Boxcard>
             <ContainerCardReport></ContainerCardReport>
 
-            <ContainerCardReport className="larg"></ContainerCardReport>
+            <ContainerCardReport className="larg">
+              <Centercard>
+                <MixedChart
+                  style={{ paddin: "50px" }}
+                  data={dataGraphMixed}
+                  xaxis={xaxisGraphMixed(ageSummary.data)}
+                  height="170px"
+                />
+              </Centercard>
+            </ContainerCardReport>
 
             {/* <ContainerCardReport></ContainerCardReport> */}
           </Boxcard>
@@ -180,4 +251,9 @@ const Boxcard = styled.div`
   .larg {
     grid-column: 2/4;
   }
+`;
+
+const Centercard = styled.div`
+  position: relative;
+  top: 10%;
 `;
