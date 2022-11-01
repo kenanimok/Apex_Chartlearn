@@ -11,66 +11,7 @@ import { defaultData } from "./data";
 import BarchartCustom from "../../../components/chart/barchartCustom/barchartCustom";
 
 const SummaryUser = () => {
-  const Datas = defaultData.dashboard_data.age_summary_data;
-  const Summarygender = defaultData.dashboard_data.gender_summary_data;
-  const [ageSummary, setAgeSummary] = useState({ data: Datas });
-
-  const dataGraphMixed = [
-    // {
-    //   name: "ชาย",
-    //   type: "column",
-    //   data: ageSummary?.data.map((value) =>
-    //     value.amount_mele !== 0 ? value.amount_male : null
-    //   ),
-
-    //   data: ageSummary?.data.map((value) =>
-    //     value.amount_male !== 0 ? value.amount_male : null
-    //   ),
-    // },
-    {
-      name: "ชาย",
-      type: "column",
-      data: ageSummary?.data.map((value) =>
-        value.amount_mele !== 0 ? value.amount_mele : null
-      ),
-    },
-    {
-      name: "หญิง",
-      type: "column",
-      data: ageSummary?.data.map((value) =>
-        value.amount_female !== 0 ? value.amount_female : null
-      ),
-    },
-    {
-      name: "ไม่ระบุเพศและอายุ",
-      type: "column",
-      data: ageSummary?.data.filter((value) =>
-        value.age_range !== "na_age_gender" ? null : value.amount_agender
-      ),
-    },
-    {
-      name: "จำนวนชาวต่างชาติ",
-      type: "line",
-      data: ageSummary?.data.map((value) => value.total_tourists_gender),
-      percent: ageSummary?.data.map(
-        (percent) => percent.percent_tourists_gender
-      ),
-    },
-  ];
-
-  const xaxisGraphMixed = (data) => {
-    return (
-      data &&
-      data.map((d) =>
-        d.age_range === "na_age"
-          ? "ไม่ระบุอายุ"
-          : d.age_range === "na_age_gender"
-          ? ["ไม่ระบุเพศ", "และอายุ"]
-          : d.age_range
-      )
-    );
-  };
-
+  const genderSummary = defaultData.dashboard_data.gender_summary_data;
   return (
     <>
       <Corelayout>
@@ -122,18 +63,23 @@ const SummaryUser = () => {
           <Boxcard>
             <ContainerCardReport>
               <TitleChart>จำนวนผู้ใช้งานจำแนกตามเพศ</TitleChart>
-              <BarchartCustom data={Summarygender} />
+              <BarchartCustom data={genderSummary} />
             </ContainerCardReport>
 
             <ContainerCardReport className="larg">
-              <Centercard>
-                <MixedChart
-                  style={{ paddin: "50px" }}
-                  data={dataGraphMixed}
-                  xaxis={xaxisGraphMixed(ageSummary.data)}
-                  height="170px"
-                />
-              </Centercard>
+              <Row>
+                <Col span={20}>
+                  <Centercard>
+                    {/* <MixedChart
+                      style={{ paddin: "50px" }}
+                      data={dataGraphMixed}
+                      xaxis={xaxisGraphMixed(ageSummary.data)}
+                      height="170px"
+                    /> */}
+                  </Centercard>
+                </Col>
+                <Col span={4}>sdfsdfsdfsdf</Col>
+              </Row>
             </ContainerCardReport>
 
             {/* <ContainerCardReport></ContainerCardReport> */}

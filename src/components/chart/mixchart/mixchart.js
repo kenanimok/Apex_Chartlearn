@@ -2,17 +2,7 @@ import numeral from "numeral";
 import { Chart } from "./mixchart.style";
 
 const MixedChart = ({ data, xaxis, height }) => {
-  //   const checkIsNull = (currentValue) => currentValue === null;
-  //   const datas = data[2]?.data;
-  //   const dataCheck = datas?.every(checkIsNull);
-
-  //   if (dataCheck) {
-  //     data?.map((value) => value?.data?.pop());
-  //     data?.splice(2, 1);
-  //   }
-
-  const percents = data[3] ? data[3]?.percent : data[2]?.percent;
-  const dataCheck = false;
+  const dataCheck = true;
 
   const series = data || [];
 
@@ -45,7 +35,7 @@ const MixedChart = ({ data, xaxis, height }) => {
       enabledOnSeries: [2],
     },
     colors: dataCheck
-      ? ["#4786FF", "#FFA336", "#5D38FA"]
+      ? ["#4786FF", "#FFA336", "#00ADA4"]
       : ["#4786FF", "#FFA336", "#23146C", "#5D38FA"],
     stroke: {
       width: dataCheck ? [1, 1, 2] : [1, 1, 1, 2],
@@ -79,7 +69,7 @@ const MixedChart = ({ data, xaxis, height }) => {
     },
     xaxis: {
       categories: xaxis || [
-        "<= 25",
+        "<= 255",
         "26-34",
         "35-44",
         "45-54",
