@@ -9,6 +9,9 @@ import Columnchart from "../../../components/chart/columchart/columnchart";
 import MixedChart from "../../../components/chart/mixchart/mixchart";
 import { defaultData } from "./data";
 import BarchartCustom from "../../../components/chart/barchartCustom/barchartCustom";
+import Kenmix from "../../../components/chart/kenMix/kenmix";
+import ProgressBar from "../../../components/chart/progess/progress";
+import Iconfire from "../../../asset/image/fire.svg";
 
 const SummaryUser = () => {
   const genderSummary = defaultData.dashboard_data.gender_summary_data;
@@ -68,7 +71,7 @@ const SummaryUser = () => {
 
             <ContainerCardReport className="larg">
               <Row>
-                <Col span={20}>
+                <Col span={22}>
                   <Centercard>
                     {/* <MixedChart
                       style={{ paddin: "50px" }}
@@ -76,13 +79,30 @@ const SummaryUser = () => {
                       xaxis={xaxisGraphMixed(ageSummary.data)}
                       height="170px"
                     /> */}
+                    <Kenmix />
                   </Centercard>
                 </Col>
-                <Col span={4}>sdfsdfsdfsdf</Col>
+                <Col span={2}>
+                  <DpBox>
+                    <p>อายุเฉลี่ย</p>
+                  </DpBox>
+                </Col>
               </Row>
             </ContainerCardReport>
+          </Boxcard>
 
-            {/* <ContainerCardReport></ContainerCardReport> */}
+          <Boxcard>
+            <ContainerCardReport className="vertical">
+              <ProgressBar />
+              <p style={{ margin: "10px" }}>แคลอรี่เฉลี่ย (ต่อวัน)</p>
+              <BoxCal>
+                <img src={Iconfire} alt="icon" />
+                <div>2,143.56 Kcal</div>
+              </BoxCal>
+            </ContainerCardReport>
+            <ContainerCardReport className="lgvertical">
+              <Kenmix />
+            </ContainerCardReport>
           </Boxcard>
         </Containers>
       </Corelayout>
@@ -192,7 +212,9 @@ const Gbox = styled.div`
 
 const Boxcard = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
+
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-content: center;
@@ -201,6 +223,14 @@ const Boxcard = styled.div`
 
   .larg {
     grid-column: 2/4;
+  }
+
+  .vertical {
+    grid-row: 1/5;
+  }
+  .lgvertical {
+    grid-column: 2/4;
+    grid-row: 1/5;
   }
 `;
 
@@ -221,5 +251,37 @@ export const TitleChart = styled.div`
     font-size: 10px;
     line-height: 16px;
     color: #b1b1b1;
+  }
+`;
+
+const DpBox = styled.div`
+  display: block;
+  margin: 20px 0px;
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+  }
+`;
+
+const BoxCal = styled.div`
+  border-radius: 16px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #f8f8f8;
+
+  .col-center {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  p {
+    font-family: "Prompt";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
   }
 `;

@@ -13,7 +13,7 @@ import {
 import numeral from "numeral";
 
 const BarchartCustom = ({ data }) => {
-  const colors = ["#4786FF", "#FFA336", "#23146C"];
+  const colors = ["#4D66C6", "#E886C1", "#00ADA4"];
 
   const checkData = data && data?.total_agender === 0;
 

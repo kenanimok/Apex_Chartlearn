@@ -3,19 +3,19 @@ import Chart from "react-apexcharts";
 export default function Kenmix() {
   const series = [
     {
-      name: "Income",
+      name: "ชาย",
       type: "column",
-      data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6],
+      data: [2, 2, 5, 10, 20, 1, 2, 4],
     },
     {
-      name: "Cashflow",
+      name: "หญิง",
       type: "column",
-      data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 80],
+      data: [2, 3, 7, 4, 8, 9, 6, 8],
     },
     {
-      name: "Revenue",
+      name: "จำนวนผู้ใช้งาน",
       type: "line",
-      data: [20, 29, 37, 36, 44, 45, 50, 58],
+      data: [4, 6, 10, 12, 23, 12, 14, 15],
     },
   ];
   const options = {
@@ -36,8 +36,9 @@ export default function Kenmix() {
     dataLabels: {
       enabled: false,
     },
+    colors: ["#4D66C6", "#E886C1", "#00ADA4"],
     stroke: {
-      width: [1, 1, 5],
+      width: [1, 1, 3],
     },
     xaxis: {
       categories: [
@@ -75,7 +76,7 @@ export default function Kenmix() {
     },
 
     markers: {
-      size: 6,
+      size: 5,
       strokeColors: "#EFEBFF",
       strokeWidth: 2,
       shape: "circle",
@@ -110,13 +111,14 @@ export default function Kenmix() {
       },
     },
     legend: {
+      position: "top",
       horizontalAlign: "left",
-      offsetX: 40,
+      offsetX: 0,
     },
   };
   return (
     <div>
-      <Chart options={options} series={series} height="500" width="100%" />
+      <Chart options={options} series={series} height="200px" />
     </div>
   );
 }
