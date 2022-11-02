@@ -38,6 +38,7 @@ export const BoxIcon = styled.div`
   }
 
   .total {
+    /* margin-top: 10px; */
     width: max-content;
     font-weight: 500;
     font-size: 24px;

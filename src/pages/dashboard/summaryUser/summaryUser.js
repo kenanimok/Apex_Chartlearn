@@ -12,6 +12,7 @@ import BarchartCustom from "../../../components/chart/barchartCustom/barchartCus
 import Kenmix from "../../../components/chart/kenMix/kenmix";
 import ProgressBar from "../../../components/chart/progess/progress";
 import Iconfire from "../../../asset/image/fire.svg";
+import Areachart from "../../../components/chart/areachart/areachart";
 
 const SummaryUser = () => {
   const genderSummary = defaultData.dashboard_data.gender_summary_data;
@@ -67,6 +68,9 @@ const SummaryUser = () => {
             <ContainerCardReport>
               <TitleChart>จำนวนผู้ใช้งานจำแนกตามเพศ</TitleChart>
               <BarchartCustom data={genderSummary} />
+
+              {/* <div className="col-center">
+              </div> */}
             </ContainerCardReport>
 
             <ContainerCardReport className="larg">
@@ -101,7 +105,8 @@ const SummaryUser = () => {
               </BoxCal>
             </ContainerCardReport>
             <ContainerCardReport className="lgvertical">
-              <Kenmix />
+              <Areachart />
+              {/* <Kenmix /> */}
             </ContainerCardReport>
           </Boxcard>
         </Containers>
@@ -226,11 +231,11 @@ const Boxcard = styled.div`
   }
 
   .vertical {
-    grid-row: 1/5;
+    grid-row: 1/3;
   }
   .lgvertical {
     grid-column: 2/4;
-    grid-row: 1/5;
+    grid-row: 1/3;
   }
 `;
 

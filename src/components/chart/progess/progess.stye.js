@@ -70,7 +70,7 @@ export const Total = styled.p`
 
 export const Progress = styled.div`
   width: 100%;
-  height: ${(props) => props.height || 34}px;
+  height: ${(props) => props.height || 45}px;
   border-radius: 10px;
   box-shadow: 0 0 3px #b0b0;
   background-color: #ededed;

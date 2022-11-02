@@ -11,6 +11,7 @@ import {
   CustomTooltip,
 } from "./barchartCustom.style";
 import numeral from "numeral";
+import male from "../../../asset/image/man.svg";
 
 const BarchartCustom = ({ data }) => {
   const colors = ["#4D66C6", "#E886C1", "#00ADA4"];
@@ -27,14 +28,21 @@ const BarchartCustom = ({ data }) => {
   return (
     <>
       <BoxBarTree hide={checkData}>
-        {/* <TopBar>
+        <TopBar>
           <BoxIcon gap={16}>
-            <p className="total">{numeral(data?.total_male).format("0,0")}</p>
+            <img className="bar-two" src={male} alt="male" />
+            <div className="total">1111</div>
+            {/* <p className="total">{numeral(data?.total_male).format("0,0")}</p> */}
           </BoxIcon>
           <BoxIcon gap={16}>
-            <p className="total">{numeral(data?.total_female).format("0,0")}</p>
+            <img className="bar-two" src={male} alt="male" />
+            <div className="total">1111</div>
+
+            {/* <p className="total">{numeral(data?.total_male).format("0,0")}</p> */}
+
+            {/* <p className="total">{numeral(data?.total_female).format("0,0")}</p> */}
           </BoxIcon>
-        </TopBar> */}
+        </TopBar>
         <Progress className="men-wo" height={40}>
           <Bar
             className="men"
