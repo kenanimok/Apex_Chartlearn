@@ -68,21 +68,12 @@ const SummaryUser = () => {
             <ContainerCardReport>
               <TitleChart>จำนวนผู้ใช้งานจำแนกตามเพศ</TitleChart>
               <BarchartCustom data={genderSummary} />
-
-              {/* <div className="col-center">
-              </div> */}
             </ContainerCardReport>
 
             <ContainerCardReport className="larg">
               <Row>
                 <Col span={22}>
                   <Centercard>
-                    {/* <MixedChart
-                      style={{ paddin: "50px" }}
-                      data={dataGraphMixed}
-                      xaxis={xaxisGraphMixed(ageSummary.data)}
-                      height="170px"
-                    /> */}
                     <Kenmix />
                   </Centercard>
                 </Col>
@@ -96,9 +87,12 @@ const SummaryUser = () => {
           </Boxcard>
 
           <Boxcard>
-            <ContainerCardReport className="vertical">
+            <ContainerCardReport
+              className="vertical"
+              padding="60px 30px 35px 20px"
+            >
               <ProgressBar />
-              <p style={{ margin: "10px" }}>แคลอรี่เฉลี่ย (ต่อวัน)</p>
+              <p style={{ margin: "24px" }}>แคลอรี่เฉลี่ย (ต่อวัน)</p>
               <BoxCal>
                 <img src={Iconfire} alt="icon" />
                 <div>2,143.56 Kcal</div>
@@ -106,7 +100,6 @@ const SummaryUser = () => {
             </ContainerCardReport>
             <ContainerCardReport className="lgvertical">
               <Areachart />
-              {/* <Kenmix /> */}
             </ContainerCardReport>
           </Boxcard>
         </Containers>

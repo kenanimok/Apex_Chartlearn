@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const BoxBarTree = styled.div`
   display: ${({ hide }) => (hide ? `grid` : "none")};
-  gap: 16px;
+  gap: 24px;
   width: 100%;
 `;
 
