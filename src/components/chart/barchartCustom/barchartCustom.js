@@ -43,7 +43,7 @@ const BarchartCustom = ({ data }) => {
             {/* <p className="total">{numeral(data?.total_female).format("0,0")}</p> */}
           </BoxIcon>
         </TopBar>
-        <Progress className="men-wo" height={40}>
+        <Progress className="men-wo" height={50}>
           <Bar
             className="men"
             fontSize={14}

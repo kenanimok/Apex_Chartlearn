@@ -118,7 +118,7 @@ export default function Kenmix() {
   };
   return (
     <div>
-      <Chart options={options} series={series} height="200px" />
+      <Chart options={options} series={series} height="230px" />
     </div>
   );
 }

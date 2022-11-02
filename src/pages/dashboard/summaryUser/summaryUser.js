@@ -12,6 +12,10 @@ import BarchartCustom from "../../../components/chart/barchartCustom/barchartCus
 import Kenmix from "../../../components/chart/kenMix/kenmix";
 import ProgressBar from "../../../components/chart/progess/progress";
 import Iconfire from "../../../asset/image/fire.svg";
+import IconYmanblue from "../../../asset/image/manblue.svg";
+import IconYgreen from "../../../asset/image/man.svg";
+import IconGirlpink from "../../../asset/image/girl.svg";
+
 import Areachart from "../../../components/chart/areachart/areachart";
 
 const SummaryUser = () => {
@@ -67,19 +71,67 @@ const SummaryUser = () => {
           <Boxcard>
             <ContainerCardReport>
               <TitleChart>จำนวนผู้ใช้งานจำแนกตามเพศ</TitleChart>
-              <BarchartCustom data={genderSummary} />
+              <div style={{ padding: "30px", marginTop: "10px" }}>
+                <BarchartCustom data={genderSummary} />
+              </div>
             </ContainerCardReport>
 
             <ContainerCardReport className="larg">
+              <TitleChart>สถิติช่วงอายุของผู้ใช้งาน (คน)</TitleChart>
+
               <Row>
-                <Col span={22}>
+                <Col span={21}>
                   <Centercard>
                     <Kenmix />
                   </Centercard>
                 </Col>
-                <Col span={2}>
+                <Col span={3}>
                   <DpBox>
                     <p>อายุเฉลี่ย</p>
+                    <div className="rowbox">
+                      <div>
+                        <img
+                          src={IconYgreen}
+                          alt="male"
+                          style={{ width: "35px" }}
+                        />
+                      </div>
+
+                      <div style={{ marginLeft: "10px" }}>
+                        <div className="bigfont">35.32 ปี</div>
+                        <div>ทั้งหมด</div>
+                      </div>
+                    </div>
+
+                    <div className="rowbox">
+                      <div>
+                        <img
+                          src={IconYmanblue}
+                          alt="male"
+                          style={{ width: "35px" }}
+                        />
+                      </div>
+
+                      <div style={{ marginLeft: "10px" }}>
+                        <div className="bigfont">35.32 ปี</div>
+                        <div>ทั้งหมด</div>
+                      </div>
+                    </div>
+
+                    <div className="rowbox">
+                      <div>
+                        <img
+                          src={IconGirlpink}
+                          alt="male"
+                          style={{ width: "35px" }}
+                        />
+                      </div>
+
+                      <div style={{ marginLeft: "10px" }}>
+                        <div className="bigfont">35.32 ปี</div>
+                        <div>ทั้งหมด</div>
+                      </div>
+                    </div>
                   </DpBox>
                 </Col>
               </Row>
@@ -89,16 +141,23 @@ const SummaryUser = () => {
           <Boxcard>
             <ContainerCardReport
               className="vertical"
-              padding="60px 30px 35px 20px"
+              // padding="60px 30px 35px 20px"
             >
-              <ProgressBar />
-              <p style={{ margin: "24px" }}>แคลอรี่เฉลี่ย (ต่อวัน)</p>
-              <BoxCal>
-                <img src={Iconfire} alt="icon" />
-                <div>2,143.56 Kcal</div>
-              </BoxCal>
+              <TitleChart>สถิติช่วงอายุของผู้ใช้งาน (คน)</TitleChart>
+              <div style={{ padding: "40px 30px 35px 20px" }}>
+                <ProgressBar />
+                <Textcal>แคลอรี่เฉลี่ย (ต่อวัน)</Textcal>
+                <BoxCal>
+                  <img src={Iconfire} alt="icon" />
+                  <div className="bigcal">2,143.56 Kcal</div>
+                </BoxCal>
+              </div>
             </ContainerCardReport>
             <ContainerCardReport className="lgvertical">
+              <TitleChart>
+                กราฟแสดงค่าเฉลี่ยสารอาหารที่ผู้ใช้งานได้รับ (กรัม)
+              </TitleChart>
+
               <Areachart />
             </ContainerCardReport>
           </Boxcard>
@@ -242,7 +301,10 @@ export const TitleChart = styled.div`
   font-size: 18px;
   line-height: 18px;
   color: #1d1d42;
-  margin-bottom: ${(props) => props.margin || "20px"};
+  margin-left: 20px;
+  margin-top: 5px;
+  /* margin-top: ${(props) => props.margintob || "20px"};
+  margin-bottom: ${(props) => props.margin || "0px"}; */
 
   span {
     font-weight: 300;
@@ -253,18 +315,24 @@ export const TitleChart = styled.div`
 `;
 
 const DpBox = styled.div`
-  display: block;
-  margin: 20px 0px;
-  p {
+  display: flex;
+  flex-direction: column;
+
+  .bigfont {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 16px;
+  }
+  .rowbox {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 5px 0px;
   }
 `;
 
 const BoxCal = styled.div`
   border-radius: 16px;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -276,10 +344,23 @@ const BoxCal = styled.div`
     justify-content: space-between;
   }
 
+  .bigcal {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
   p {
     font-family: "Prompt";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
   }
+`;
+
+const Textcal = styled.div`
+  margin: 24px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
 `;
